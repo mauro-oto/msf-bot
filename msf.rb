@@ -7,8 +7,8 @@ Dotenv.load
 
 bot = Discordrb::Commands::CommandBot.new(token: ENV['DISCORD_TOKEN'], client_id: ENV['DISCORD_CLIENT_ID'], prefix: '!')
 
-# puts "This bot's invite URL is #{bot.invite_url}."
-# puts 'Click on it to invite it to your server.'
+puts "Para invitar al bot al server:"
+puts "#{bot.invite_url}."
 
 # CROSS_MARK = "\u274c".freeze
 

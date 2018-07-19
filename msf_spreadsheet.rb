@@ -13,7 +13,7 @@ class MSF
     SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
 
     SPREADSHEET_ID = '1KVszr7KRYr8B7wrMioBAxNKXt-2RarYpK8np9Zielfs'.freeze
-    RANGE = 'Character 2.0!A5:J5'.freeze
+    RANGE = 'Character 2.0!A5:J20'.freeze
 
     def initialize
       @service = Google::Apis::SheetsV4::SheetsService.new
@@ -23,7 +23,8 @@ class MSF
 
     def call
       response = @service.get_spreadsheet_values(SPREADSHEET_ID, RANGE)
-      response.values.flatten
+      values = response.values.reject { |x| x.empty? }.reject { |x| x.first.empty? }.last
+      values.flatten
     end
 
     private
