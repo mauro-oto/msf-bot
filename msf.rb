@@ -11,8 +11,6 @@ bot = Discordrb::Commands::CommandBot.new(token: ENV['DISCORD_TOKEN'], client_id
 puts "Para invitar al bot al server:"
 puts "#{bot.invite_url}."
 
-# CROSS_MARK = "\u274c".freeze
-
 bot.command :ultimoasalto do |event|
   response = MSF::Spreadsheet.new.call
 
@@ -30,5 +28,4 @@ bot.command :ultimoasalto do |event|
   event << "- Participantes: **#{response[9]}**"
 end
 
-# Connect to Discord
 bot.run
