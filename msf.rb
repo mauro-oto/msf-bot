@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'rbnacl/libsodium'
 require 'discordrb'
 require 'dotenv'
 require_relative 'msf_spreadsheet'
